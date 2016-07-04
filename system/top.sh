@@ -2,7 +2,7 @@
 #cpu memory process load_average
 
 top_setup(){
-    declare top_file="./system/top.list"
+    local top_file="./system/top.list"
 
     #文件是否存在
     if [ ! -e ${top_file} ];then
@@ -11,11 +11,11 @@ top_setup(){
 
     top -b -n 1 | head -n 5 > ${top_file}
 
-    declare load_average_val=`sed -n '1p' ${top_file}` # 系统负载
-    declare process_val=`sed -n '2p' ${top_file}`      # 进程
-    declare cpu_val=`sed -n '3p' ${top_file}`          # CPU
-    declare memory_val=`sed -n '4p' ${top_file}`       # 内存
-    declare swap_val=`sed -n '5p' ${top_file}`       # 内存
+    local load_average_val=`sed -n '1p' ${top_file}` # 系统负载
+    local process_val=`sed -n '2p' ${top_file}`      # 进程
+    local cpu_val=`sed -n '3p' ${top_file}`          # CPU
+    local memory_val=`sed -n '4p' ${top_file}`       # 内存
+    local swap_val=`sed -n '5p' ${top_file}`       # 内存
 
     #load_average
     ${DB_EXEC} -e "insert into ${DB_DATABASE}.load_average_log(ip32,ip64,minute,val)values('${ip32_addr}','${ip64_addr}',${now_time},'${load_average_val}')"

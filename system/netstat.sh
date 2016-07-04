@@ -2,7 +2,7 @@
 # netstat
 
 netstat_setup(){
-    declare netstat_file="./system/netstat.list"
+    local netstat_file="./system/netstat.list"
 
     #文件是否存在
     if [ ! -e ${netstat_file} ];then

@@ -2,7 +2,7 @@
 #disk
 
 df_setup(){
-    declare disk_file="./system/disk.list"
+    local disk_file="./system/disk.list"
 
     #文件是否存在
     if [ ! -e ${disk_file} ];then
