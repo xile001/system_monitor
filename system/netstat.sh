@@ -9,7 +9,7 @@ netstat_setup(){
        touch $netstat_file
     fi
 
-    netstat -nut |awk 'NR>2 {print $5}'|uniq -c > $netstat_file
+    netstat -nut | awk 'NR>2 {print $5}' | awk -F: '{print $1}' | sort | uniq -c > $netstat_file
 
     while read LINE
     do
