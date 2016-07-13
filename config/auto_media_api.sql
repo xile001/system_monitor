@@ -1,10 +1,16 @@
 /*
 Navicat MySQL Data Transfer
+
+Source Server         : 192.168.86.72
+Source Server Version : 50525
+Source Host           : 192.168.86.72:3306
+Source Database       : auto_media_api
+
 Target Server Type    : MYSQL
 Target Server Version : 50525
 File Encoding         : 65001
 
-Date: 2016-06-22 09:32:41
+Date: 2016-07-13 15:50:21
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -39,7 +45,6 @@ CREATE TABLE `disk_use_log` (
   `mounted_on` varchar(50) NOT NULL COMMENT '挂载目录',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
-
 
 -- ----------------------------
 -- Table structure for load_average_log
@@ -92,7 +97,7 @@ CREATE TABLE `process_use_log` (
   `minute` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '每分钟',
   `val` varchar(200) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 -- Table structure for swap_use_log
